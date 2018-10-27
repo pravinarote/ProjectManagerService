@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManager.DataLayer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManager.BusinessLayer", "ProjectManager.BusinessLayer\ProjectManager.BusinessLayer.csproj", "{DE323CCD-5A0B-4FF0-A41F-07793802A4AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManager.Tests", "ProjectManager.DataLayer.Tests\ProjectManager.Tests.csproj", "{7DFB50B9-4084-4F5B-9E02-71176C588837}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManager.Tests", "ProjectManager.Tests\ProjectManager.Tests.csproj", "{7DFB50B9-4084-4F5B-9E02-71176C588837}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
