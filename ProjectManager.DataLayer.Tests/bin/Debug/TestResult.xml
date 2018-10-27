@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.DataLayer.Tests\bin\Debug\ProjectManager.Tests.dll" total="39" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-10-26" time="23:35:41">
+  <environment nunit-version="2.6.3.13283" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit-2.6.3\bin" machine-name="DPUN-PC0U3FBE" user="pravin.arote" user-domain="TRAFGLOBAL" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.DataLayer.Tests\bin\Debug\ProjectManager.Tests.dll" executed="True" result="Success" success="True" time="1.425" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="ProjectManager" executed="True" result="Success" success="True" time="1.414" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="1.414" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="BusinessLayer" executed="True" result="Success" success="True" time="1.217" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="ProjectManagerMapperTest" executed="True" result="Success" success="True" time="0.177" asserts="0">
+                    <results>
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerMapperTest.VerifyProjectMapperOperations" executed="True" result="Success" success="True" time="0.162" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerMapperTest.VerifyTaskMapperOperations" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerMapperTest.VerifyUserMapperOperations" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="ProjectManagerServiceTests" executed="True" result="Success" success="True" time="1.038" asserts="0">
+                    <results>
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_AddProject_Then_VerifyResult" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_AddTask_Then_VerifyResult" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_AddUser_Then_VerifyResult" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_DeleteProject_Then_VerifyResult" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_DeleteTask_Then_VerifyResult" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_DeleteTask_Then_VerifyResults" executed="True" result="Success" success="True" time="0.016" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_DeleteUser_Then_VerifyResult" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_GetAllProjects_Then_VerifyResult" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_GetAllTasks_Then_VerifyResult" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_GetAllUsers_Then_VerifyResult" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_GetProjectById_Then_VerifyResult" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_GetTaskById_Then_VerifyResult" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_GetUserById_Then_VerifyResult" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_UpdateProject_Then_VerifyResult" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_UpdateTask_Then_VerifyResult" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_UpdateUser_Then_VerifyResult" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="DataLayer" executed="True" result="Success" success="True" time="0.058" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="RepositoryTest" executed="True" result="Success" success="True" time="0.058" asserts="0">
+                    <results>
+                      <test-case name="ProjectManager.Tests.DataLayer.RepositoryTest.When_DeleteTask_Then_VerifyTaskDeleted" executed="True" result="Success" success="True" time="0.027" asserts="0" />
+                      <test-case name="ProjectManager.Tests.DataLayer.RepositoryTest.When_GetAll_VerifyResults" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                      <test-case name="ProjectManager.Tests.DataLayer.RepositoryTest.When_GetById_Then_VerifyTaskDetails" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                      <test-case name="ProjectManager.Tests.DataLayer.RepositoryTest.When_InsertNewTask_Then_VerifyTaskInserted" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                      <test-case name="ProjectManager.Tests.DataLayer.RepositoryTest.When_TaskSearched_Then_VerifyResults" executed="True" result="Success" success="True" time="0.017" asserts="0" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="ServiceLayer" executed="True" result="Success" success="True" time="0.136" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="ProjectManagerControllerTests" executed="True" result="Success" success="True" time="0.135" asserts="0">
+                    <results>
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_AddProject_Then_VerifyResults" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_AddTask_Then_VerifyResults" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_AddUser_Then_VerifyResults" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_DeleteProject_Then_VerifyResults" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_DeleteTask_Then_VerifyResults" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_DeleteUser_Then_VerifyResults" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_GetAllProjects_Then_ShouldReturnAllProjects" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_GetAllTasks_Then_ShouldReturnAllTasks" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_GetAllUsers_Then_VerifyResults" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_GetProjectById_Then_VerifyResults" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_GetTaskById_Then_VerifyResults" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_GetUserById_Then_VerifyResults" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_UpdateProject_Then_VerifyResults" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_UpdateTask_Then_VerifyResults" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_UpdateUser_Then_VerifyResults" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

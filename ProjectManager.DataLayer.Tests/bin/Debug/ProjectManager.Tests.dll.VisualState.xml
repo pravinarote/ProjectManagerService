@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ShowCheckBoxes="false">
+  <TopNode>[0-1042]C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.DataLayer.Tests\bin\Debug\ProjectManager.Tests.dll</TopNode>
+  <SelectedNode>[0-1042]C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.DataLayer.Tests\bin\Debug\ProjectManager.Tests.dll</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1042]C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.DataLayer.Tests\bin\Debug\ProjectManager.Tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1043]ProjectManager" Expanded="true" />
+    <Node UniqueName="[0-1044]ProjectManager.Tests" Expanded="true" />
+    <Node UniqueName="[0-1045]ProjectManager.Tests.BusinessLayer" Expanded="true" />
+    <Node UniqueName="[0-1046]ProjectManager.Tests.DataLayer" Expanded="true" />
+    <Node UniqueName="[0-1047]ProjectManager.Tests.ServiceLayer" Expanded="true" />
+  </Nodes>
+</VisualState>
