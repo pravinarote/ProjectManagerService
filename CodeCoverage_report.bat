@@ -1,2 +1,2 @@
 packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -target:runtests.bat -register:user -filter:"+[ProjectManager.API]ProjectManager.API.Controllers.ProjectManagerController* +[ProjectManager.DataLayer]* +[ProjectManager.BusinessLayer]* +[ProjectManager.Entities]* -[ProjectManager.DataLayer.Tests]*"  
-packages\ReportGenerator.3.1.2\tools\ReportGenerator.exe -reports:"results.xml" -targetdir:"NunitReports" -reporttypes:Html
+packages\ReportGenerator.3.1.2\tools\ReportGenerator.exe -reports:"results.xml" -targetdir:"Reports" -reporttypes:Html
