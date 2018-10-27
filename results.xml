@@ -9,31 +9,31 @@
       <Classes />
     </Module>
     <Module skippedDueTo="Filter" hash="F9-CA-B6-79-63-CB-31-8A-0D-DC-C3-D0-43-F8-28-C3-F0-95-F9-E7">
-      <ModulePath>C:\Program Files (x86)\NUnit-2.6.3\bin\nunit-console.exe</ModulePath>
+      <ModulePath>C:\Program Files (x86)\NUnit 2.6.1\bin\nunit-console.exe</ModulePath>
       <ModuleTime>2014-07-21T11:34:12Z</ModuleTime>
       <ModuleName>nunit-console</ModuleName>
       <Classes />
     </Module>
     <Module skippedDueTo="Filter" hash="2A-C4-E5-DE-F3-EE-AD-84-E1-65-84-CC-15-90-76-96-E7-01-44-4E">
-      <ModulePath>C:\Program Files (x86)\NUnit-2.6.3\bin\lib\nunit-console-runner.dll</ModulePath>
+      <ModulePath>C:\Program Files (x86)\NUnit 2.6.1\bin\lib\nunit-console-runner.dll</ModulePath>
       <ModuleTime>2014-07-21T11:34:14Z</ModuleTime>
       <ModuleName>nunit-console-runner</ModuleName>
       <Classes />
     </Module>
     <Module skippedDueTo="Filter" hash="33-E1-CA-24-52-5A-B7-C7-C4-AF-91-2C-A9-4A-C0-37-67-0D-5B-FE">
-      <ModulePath>C:\Program Files (x86)\NUnit-2.6.3\bin\lib\nunit.core.dll</ModulePath>
+      <ModulePath>C:\Program Files (x86)\NUnit 2.6.1\bin\lib\nunit.core.dll</ModulePath>
       <ModuleTime>2014-07-21T11:34:14Z</ModuleTime>
       <ModuleName>nunit.core</ModuleName>
       <Classes />
     </Module>
     <Module skippedDueTo="Filter" hash="74-74-F6-87-59-E1-5F-4F-5F-5E-6E-82-50-E8-E2-46-D4-86-15-76">
-      <ModulePath>C:\Program Files (x86)\NUnit-2.6.3\bin\lib\nunit.util.dll</ModulePath>
+      <ModulePath>C:\Program Files (x86)\NUnit 2.6.1\bin\lib\nunit.util.dll</ModulePath>
       <ModuleTime>2014-07-21T11:34:14Z</ModuleTime>
       <ModuleName>nunit.util</ModuleName>
       <Classes />
     </Module>
     <Module skippedDueTo="Filter" hash="D3-A4-4D-85-55-F7-CE-EF-A5-90-AA-EF-58-E0-9F-B6-CC-27-99-53">
-      <ModulePath>C:\Program Files (x86)\NUnit-2.6.3\bin\lib\nunit.core.interfaces.dll</ModulePath>
+      <ModulePath>C:\Program Files (x86)\NUnit 2.6.1\bin\lib\nunit.core.interfaces.dll</ModulePath>
       <ModuleTime>2014-07-21T11:34:14Z</ModuleTime>
       <ModuleName>nunit.core.interfaces</ModuleName>
       <Classes />
@@ -63,7 +63,7 @@
       <Classes />
     </Module>
     <Module skippedDueTo="Filter" hash="33-E1-CA-24-52-5A-B7-C7-C4-AF-91-2C-A9-4A-C0-37-67-0D-5B-FE">
-      <ModulePath>C:\Program Files (x86)\NUnit-2.6.3\bin\lib\nunit.core.dll</ModulePath>
+      <ModulePath>C:\Program Files (x86)\NUnit 2.6.1\bin\lib\nunit.core.dll</ModulePath>
       <ModuleTime>2014-07-21T11:34:14Z</ModuleTime>
       <ModuleName>nunit.core</ModuleName>
       <Classes />
@@ -81,19 +81,19 @@
       <Classes />
     </Module>
     <Module skippedDueTo="Filter" hash="B6-96-0F-77-90-5D-5D-2F-9A-F2-9F-C4-E5-75-AD-9C-ED-57-F3-17">
-      <ModulePath>C:\Program Files (x86)\NUnit-2.6.3\bin\pnunit.framework.dll</ModulePath>
+      <ModulePath>C:\Program Files (x86)\NUnit 2.6.1\bin\pnunit.framework.dll</ModulePath>
       <ModuleTime>2014-07-21T11:34:14Z</ModuleTime>
       <ModuleName>pnunit.framework</ModuleName>
       <Classes />
     </Module>
     <Module skippedDueTo="Filter" hash="BF-1D-D7-35-9F-DE-AD-6C-C5-85-0E-59-71-C4-80-76-13-06-73-54">
-      <ModulePath>C:\Program Files (x86)\NUnit-2.6.3\bin\pnunit-agent.exe</ModulePath>
+      <ModulePath>C:\Program Files (x86)\NUnit 2.6.1\bin\pnunit-agent.exe</ModulePath>
       <ModuleTime>2014-07-21T11:34:14Z</ModuleTime>
       <ModuleName>pnunit-agent</ModuleName>
       <Classes />
     </Module>
     <Module skippedDueTo="Filter" hash="D3-A4-4D-85-55-F7-CE-EF-A5-90-AA-EF-58-E0-9F-B6-CC-27-99-53">
-      <ModulePath>C:\Program Files (x86)\NUnit-2.6.3\bin\lib\nunit.core.interfaces.dll</ModulePath>
+      <ModulePath>C:\Program Files (x86)\NUnit 2.6.1\bin\lib\nunit.core.interfaces.dll</ModulePath>
       <ModuleTime>2014-07-21T11:34:14Z</ModuleTime>
       <ModuleName>nunit.core.interfaces</ModuleName>
       <Classes />
