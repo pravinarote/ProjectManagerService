@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\NUnit-2.6.3\bin\nunit-console.exe" "ProjectManager.DataLayer.Tests\bin\Debug\ProjectManager.Tests.dll" /noshadow
+"C:\Program Files (x86)\NUnit-2.6.3\bin\nunit-console.exe" "ProjectManager.Tests\bin\Debug\ProjectManager.Tests.dll" /noshadow
