@@ -24,5 +24,10 @@ namespace ProjectManager.Entities
         [DataType(DataType.DateTime)]
         [Required]
         public DateTime EndDate { get; set; }
+
+        [ForeignKey("UserId")]
+        public User User { get; set; }
+        [ForeignKey("User")]
+        public int? UserId { get; set; }
     }
 }

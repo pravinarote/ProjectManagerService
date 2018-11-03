@@ -40,5 +40,10 @@ namespace ProjectManager.Entities
         [ForeignKey("Project")]
         public int? ProjectId { get; set; }
 
+        [ForeignKey("UserId")]
+        public User User { get; set; }
+        [ForeignKey("User")]
+        public int? UserId { get; set; }
+
     }
 }

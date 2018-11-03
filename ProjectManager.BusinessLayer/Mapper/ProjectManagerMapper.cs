@@ -21,6 +21,10 @@ namespace ProjectManager.BusinessLayer.Mapper
             {
                 task.ProjectId = taskEntity.Project.ProjectId;
             }
+            if (taskEntity.User != null)
+            {
+                task.UserId = taskEntity.User.UserId;
+            }
             return task;
         }
 
@@ -53,6 +57,10 @@ namespace ProjectManager.BusinessLayer.Mapper
             {
                 task.ProjectId = taskEntity.Project.ProjectId;
             }
+            if (taskEntity.User != null)
+            {
+                task.UserId = taskEntity.User.UserId;
+            }
 
             return task;
         }
@@ -74,6 +82,8 @@ namespace ProjectManager.BusinessLayer.Mapper
             taskEntity.IsTaskEnded = task.TaskStatusId == 2;
             if (task.ProjectId.HasValue)
                 taskEntity.Project = new ProjectEntity() { ProjectId = task.ProjectId.Value };
+            if (task.UserId.HasValue)
+                taskEntity.User = new UserEntity() { UserId = task.UserId.Value };
 
             if (task.TaskStatus != null)
             {
@@ -129,6 +139,8 @@ namespace ProjectManager.BusinessLayer.Mapper
                 taskEntity.IsTaskEnded = task.TaskStatusId == 2;
                 if (task.ProjectId.HasValue)
                     taskEntity.Project = new ProjectEntity() { ProjectId = task.ProjectId.Value };
+                if (task.UserId.HasValue)
+                    taskEntity.User = new UserEntity() { UserId = task.UserId.Value };
                 if (task.TaskStatus != null)
                 {
                     taskEntity.TaskStatusEntity = new TaskStatusEntity() { Id = task.TaskStatus.Id, Name = task.TaskStatus.Name };
@@ -146,6 +158,8 @@ namespace ProjectManager.BusinessLayer.Mapper
             project.Priority = projectEntity.Priority;
             project.StartDate = projectEntity.StartDate;
             project.EndDate = projectEntity.EndDate;
+            if (projectEntity.User != null)
+                project.UserId = projectEntity.User.UserId;
 
             return project;
         }
@@ -159,6 +173,9 @@ namespace ProjectManager.BusinessLayer.Mapper
             project.StartDate = projectEntity.StartDate;
             project.EndDate = projectEntity.EndDate;
 
+            if (projectEntity.User != null)
+                project.UserId = projectEntity.User.UserId;
+
             return project;
         }
 
@@ -170,6 +187,10 @@ namespace ProjectManager.BusinessLayer.Mapper
             projectEntity.Priority = project.Priority;
             projectEntity.StartDate = project.StartDate;
             projectEntity.EndDate = project.EndDate;
+            if (project.User != null)
+            {
+                projectEntity.User = new UserEntity() { UserId = project.User.UserId };
+            }
 
             return projectEntity;
         }
@@ -187,6 +208,11 @@ namespace ProjectManager.BusinessLayer.Mapper
                 projectEntity.StartDate = project.StartDate;
                 projectEntity.EndDate = project.EndDate;
 
+                if (project.User != null)
+                {
+                    projectEntity.User = new UserEntity() { UserId = project.User.UserId };
+                }
+
                 projectEntityList.Add(projectEntity);
             });
 
@@ -198,10 +224,10 @@ namespace ProjectManager.BusinessLayer.Mapper
             user.EmployeeId = userEntity.EmployeeId;
             user.FirstName = userEntity.FirstName;
             user.LastName = userEntity.LastName;
-            if (userEntity.Project != null)
-                user.ProjectId = userEntity.Project.ProjectId;
-            if (userEntity.Task != null)
-                user.TaskId = userEntity.Task.TaskId;
+            //if (userEntity.Project != null)
+            //    user.ProjectId = userEntity.Project.ProjectId;
+            //if (userEntity.Task != null)
+            //    user.TaskId = userEntity.Task.TaskId;
 
             return user;
         }
@@ -212,10 +238,10 @@ namespace ProjectManager.BusinessLayer.Mapper
             user.EmployeeId = userEntity.EmployeeId;
             user.FirstName = userEntity.FirstName;
             user.LastName = userEntity.LastName;
-            if (userEntity.Project != null)
-                user.ProjectId = userEntity.Project.ProjectId;
-            if (userEntity.Task != null)
-                user.TaskId = userEntity.Task.TaskId;
+            //if (userEntity.Project != null)
+            //    user.ProjectId = userEntity.Project.ProjectId;
+            //if (userEntity.Task != null)
+            //    user.TaskId = userEntity.Task.TaskId;
 
             return user;
         }
@@ -227,10 +253,10 @@ namespace ProjectManager.BusinessLayer.Mapper
             userEntity.EmployeeId = user.EmployeeId;
             userEntity.FirstName = user.FirstName;
             userEntity.LastName = user.LastName;
-            if (user.Project != null)
-                userEntity.Project = new ProjectEntity() { ProjectId = user.ProjectId.Value };
-            if (user.Task != null)
-                userEntity.Task = new TaskEntity() { TaskId = user.TaskId.Value };
+            //if (user.Project != null)
+            //    userEntity.Project = new ProjectEntity() { ProjectId = user.ProjectId.Value };
+            //if (user.Task != null)
+            //    userEntity.Task = new TaskEntity() { TaskId = user.TaskId.Value };
 
             return userEntity;
         }
@@ -245,10 +271,10 @@ namespace ProjectManager.BusinessLayer.Mapper
                 userEntity.EmployeeId = user.EmployeeId;
                 userEntity.FirstName = user.FirstName;
                 userEntity.LastName = user.LastName;
-                if (user.Project != null)
-                    userEntity.Project = new ProjectEntity() { ProjectId = user.ProjectId.Value };
-                if (user.Task != null)
-                    userEntity.Task = new TaskEntity() { TaskId = user.TaskId.Value };
+                //if (user.Project != null)
+                //    userEntity.Project = new ProjectEntity() { ProjectId = user.ProjectId.Value };
+                //if (user.Task != null)
+                //    userEntity.Task = new TaskEntity() { TaskId = user.TaskId.Value };
 
                 userEntityList.Add(userEntity);
             });

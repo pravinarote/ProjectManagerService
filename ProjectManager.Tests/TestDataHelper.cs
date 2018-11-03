@@ -54,28 +54,28 @@ namespace ProjectManager.Tests
                 FirstName = "EMP 1",
                 LastName = "LAST 1",
                 EmployeeId = "EMP001",
-                ProjectId = 1,
-                Project = new Project()
-                {
-                    ProjectId = 1,
-                    ProjectName = "Trtafigura",
-                    StartDate = DateTime.Now.AddDays(-20),
-                    EndDate = DateTime.Now,
-                    Priority = 6,
-                },
-                TaskId = 1,
-                Task = new Task()
-                {
-                    TaskName = "Task 15",
-                    Priority = 13,
-                    StartDate = new DateTime(2009, 10, 01),
-                    EndDate = new DateTime(2019, 10, 01),
-                    ParentTaskId = null,
-                    ParentTask = new ParentTask() { ParentTaskId = 1, ParentTaskName = "Task" },
-                    TaskStatus = new TaskStatus() { Id = 1, Name = "Started" },
-                    ProjectId = 1,
-                    Project = new Project() { ProjectId = 1, ProjectName = "Test Project" }
-                }
+                //ProjectId = 1,
+                //Project = new Project()
+                //{
+                //    ProjectId = 1,
+                //    ProjectName = "Trtafigura",
+                //    StartDate = DateTime.Now.AddDays(-20),
+                //    EndDate = DateTime.Now,
+                //    Priority = 6,
+                //},
+                //TaskId = 1,
+                //Task = new Task()
+                //{
+                //    TaskName = "Task 15",
+                //    Priority = 13,
+                //    StartDate = new DateTime(2009, 10, 01),
+                //    EndDate = new DateTime(2019, 10, 01),
+                //    ParentTaskId = null,
+                //    ParentTask = new ParentTask() { ParentTaskId = 1, ParentTaskName = "Task" },
+                //    TaskStatus = new TaskStatus() { Id = 1, Name = "Started" },
+                //    ProjectId = 1,
+                //    Project = new Project() { ProjectId = 1, ProjectName = "Test Project" }
+                //}
             };
         }
 

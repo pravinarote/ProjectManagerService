@@ -167,3 +167,5 @@ C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.Tests\bin\Debug\Sys
 C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.Tests\bin\Debug\System.Web.WebPages.xml
 C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.Tests\bin\Debug\System.Web.Http.Cors.dll
+C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.Tests\bin\Debug\System.Web.Http.Cors.xml

@@ -19,14 +19,14 @@ namespace ProjectManager.Entities
         [StringLength(50)]
         public string EmployeeId { get; set; }
 
-        [ForeignKey("ProjectId")]
-        public Project Project { get; set; }
-        [ForeignKey("Project")]
-        public int? ProjectId { get; set; }
+        //[ForeignKey("ProjectId")]
+        //public Project Project { get; set; }
+        //[ForeignKey("Project")]
+        //public int? ProjectId { get; set; }
 
-        [ForeignKey("TaskId")]
-        public Task Task { get; set; }
-        [ForeignKey("Task")]
-        public int? TaskId { get; set; }
+        //[ForeignKey("TaskId")]
+        //public Task Task { get; set; }
+        //[ForeignKey("Task")]
+        //public int? TaskId { get; set; }
     }
 }

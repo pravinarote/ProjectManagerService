@@ -15,5 +15,6 @@ namespace ProjectManager.BusinessLayer.BusinessEntities
 
         public TaskStatusEntity TaskStatusEntity { get; set; }
         public ProjectEntity Project { get; set; }
+        public UserEntity User { get; set; }
     }
 }

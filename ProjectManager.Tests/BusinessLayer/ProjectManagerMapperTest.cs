@@ -88,16 +88,16 @@ namespace ProjectManager.Tests.BusinessLayer
             Assert.AreEqual(user.FirstName, userEntity.FirstName);
 
             user = TestDataHelper.GetUser();
-            user.Task = null;
-            user.Project = null;
+            //user.Task = null;
+            //user.Project = null;
             userEntity = user.Map();
             Assert.NotNull(userEntity);
             Assert.AreEqual(user.FirstName, userEntity.FirstName);
 
             var userList = TestDataHelper.GetUserList();
             var userEntityList = userList.Map();
-            userEntity.Project = null;
-            user.Task = null;
+            //userEntity.Project = null;
+            //user.Task = null;
             Assert.NotNull(userEntityList);
             Assert.AreEqual(userList.Count, userEntityList.Count);
 

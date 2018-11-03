@@ -19,6 +19,8 @@ namespace ProjectManager.API
 
             UnityConfig.RegisterComponents();
 
+            config.EnableCors();
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 
