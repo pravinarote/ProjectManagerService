@@ -47,12 +47,12 @@ namespace ProjectManager.Tests.BusinessLayer
             task.TaskStatusId = 1;
             taskModel = taskEntity.Map(task);
 
-            taskModel = taskEntity.Map();
+            taskModel = taskEntity.MapTask();
             Assert.NotNull(taskModel);
 
             task.ParentTask = null;
             task.TaskStatusId = 1;
-            taskModel = taskEntity.Map();
+            taskModel = taskEntity.MapTask();
             Assert.AreEqual(taskEntity.TaskName, taskModel.TaskName);
         }
 

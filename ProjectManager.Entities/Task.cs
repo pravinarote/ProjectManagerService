@@ -25,8 +25,8 @@ namespace ProjectManager.Entities
         [Required]
         public DateTime EndDate { get; set; }
 
-        [ForeignKey("TaskId")]
-        public Task ParentTask { get; set; }
+        [ForeignKey("ParentTaskId")]
+        public ParentTask ParentTask { get; set; }
         [ForeignKey("ParentTask")]
         public int? ParentTaskId { get; set; }
 

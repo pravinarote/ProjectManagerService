@@ -17,7 +17,7 @@ namespace ProjectManager.Tests
                 StartDate = new DateTime(2009, 10, 01),
                 EndDate = new DateTime(2019, 10, 01),
                 ParentTaskId = null,
-                ParentTask = new Task() { TaskId = 1, TaskName = "Task" },
+                ParentTask = new ParentTask() { ParentTaskId = 1, ParentTaskName = "Task" },
                 TaskStatus = new TaskStatus() { Id = 1, Name = "Started" },
                 ProjectId = 1,
                 Project = new Project() { ProjectId = 1, ProjectName = "Test Project" }
@@ -71,7 +71,7 @@ namespace ProjectManager.Tests
                     StartDate = new DateTime(2009, 10, 01),
                     EndDate = new DateTime(2019, 10, 01),
                     ParentTaskId = null,
-                    ParentTask = new Task() { TaskId = 1, TaskName = "Task" },
+                    ParentTask = new ParentTask() { ParentTaskId = 1, ParentTaskName = "Task" },
                     TaskStatus = new TaskStatus() { Id = 1, Name = "Started" },
                     ProjectId = 1,
                     Project = new Project() { ProjectId = 1, ProjectName = "Test Project" }

@@ -11,6 +11,7 @@ namespace ProjectManager.BusinessLayer
     {
         //public IUnitOfWork unitOfWork;
         public IRepository<Task> taskRepository;
+        public IRepository<ParentTask> parentTaskRepository;
         public IRepository<Project> projectRepository;
         public IRepository<User> userRepository;
 
@@ -20,11 +21,13 @@ namespace ProjectManager.BusinessLayer
         //}
 
         public ProjectManagerService(IRepository<Task> taskRepository, 
-            IRepository<Project> projectRepository, IRepository<User> userRepository)
+            IRepository<Project> projectRepository, IRepository<User> userRepository, 
+            IRepository<ParentTask> parentTaskRepository)
         {
             this.taskRepository = taskRepository;
             this.projectRepository = projectRepository;
             this.userRepository = userRepository;
+            this.parentTaskRepository = parentTaskRepository;
         }
 
         public int AddProject(ProjectEntity projectEntity)
@@ -34,9 +37,16 @@ namespace ProjectManager.BusinessLayer
             return project.ProjectId;
         }
 
+        public int AddParentTask(TaskEntity taskEntity)
+        {
+            var parentTask = parentTaskRepository.Add(taskEntity.Map());
+            return parentTask.ParentTaskId;
+                
+        }
+
         public int AddTask(TaskEntity taskEntity)
         {
-            var insertedTask = taskRepository.Add(taskEntity.Map());
+            var insertedTask = taskRepository.Add(taskEntity.MapTask());
             return insertedTask.TaskId;
         }
 
@@ -85,6 +95,12 @@ namespace ProjectManager.BusinessLayer
             return tasks.Map();
         }
 
+        public List<TaskEntity> GetAllParentTasks()
+        {
+            var parentTasks = parentTaskRepository.GetAll().ToList();
+            return parentTasks.Map();
+        }
+
         public List<UserEntity> GetAllUsers()
         {
             var users = userRepository.GetAll().ToList();
@@ -101,6 +117,12 @@ namespace ProjectManager.BusinessLayer
         {
             var task = taskRepository.Get(id);
             return task.Map();
+        }
+
+        public TaskEntity GetParentTaskById(int id)
+        {
+            var parentTask = parentTaskRepository.Get(id);
+            return parentTask.Map();
         }
 
         public UserEntity GetUserById(int id)

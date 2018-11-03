@@ -25,6 +25,13 @@ namespace ProjectManager.API.Controllers
         }
 
         [HttpGet]
+        [Route("ParentTasks/GetAll")]
+        public IHttpActionResult GetAllParentTasks()
+        {
+            return Ok(projectManagerService.GetAllParentTasks());
+        }
+
+        [HttpGet]
         [Route("Projects/GetAll")]
         public IHttpActionResult GetAllProjects()
         {
@@ -43,6 +50,13 @@ namespace ProjectManager.API.Controllers
         public IHttpActionResult GetTaskById(int id)
         {
             return Ok(projectManagerService.GetTaskById(id));
+        }
+
+        [Route("ParentTasks/GetById/{id}")]
+        [HttpGet]
+        public IHttpActionResult GetParentTaskById(int id)
+        {
+            return Ok(projectManagerService.GetParentTaskById(id));
         }
 
         [Route("Projects/GetById/{id}")]
@@ -64,6 +78,13 @@ namespace ProjectManager.API.Controllers
         public IHttpActionResult AddTask([FromBody]TaskEntity taskEntity)
         {
             return Ok(projectManagerService.AddTask(taskEntity));
+        }
+
+        [Route("ParentTasks/Create")]
+        [HttpPost]
+        public IHttpActionResult AddParentTask([FromBody]TaskEntity taskEntity)
+        {
+            return Ok(projectManagerService.AddParentTask(taskEntity));
         }
 
         [Route("Projects/Create")]

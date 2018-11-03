@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.Tests\bin\Debug\ProjectManager.Tests.dll" total="38" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-10-27" time="13:45:47">
+<test-results name="C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.Tests\bin\Debug\ProjectManager.Tests.dll" total="38" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-11-03" time="08:19:14">
   <environment nunit-version="2.6.3.13283" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\FSD\FINAL ASSESSMENT\ProjectManagerService" machine-name="DPUN-PC0U3FBE" user="pravin.arote" user-domain="TRAFGLOBAL" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.Tests\bin\Debug\ProjectManager.Tests.dll" executed="True" result="Success" success="True" time="1.069" asserts="0">
+  <test-suite type="Assembly" name="C:\FSD\FINAL ASSESSMENT\ProjectManagerService\ProjectManager.Tests\bin\Debug\ProjectManager.Tests.dll" executed="True" result="Success" success="True" time="1.630" asserts="0">
     <results>
-      <test-suite type="Namespace" name="ProjectManager" executed="True" result="Success" success="True" time="1.064" asserts="0">
+      <test-suite type="Namespace" name="ProjectManager" executed="True" result="Success" success="True" time="1.625" asserts="0">
         <results>
-          <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="1.063" asserts="0">
+          <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="1.625" asserts="0">
             <results>
-              <test-suite type="Namespace" name="BusinessLayer" executed="True" result="Success" success="True" time="0.917" asserts="0">
+              <test-suite type="Namespace" name="BusinessLayer" executed="True" result="Success" success="True" time="1.477" asserts="0">
                 <results>
-                  <test-suite type="TestFixture" name="ProjectManagerMapperTest" executed="True" result="Success" success="True" time="0.275" asserts="0">
+                  <test-suite type="TestFixture" name="ProjectManagerMapperTest" executed="True" result="Success" success="True" time="0.383" asserts="0">
                     <results>
-                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerMapperTest.VerifyProjectMapperOperations" executed="True" result="Success" success="True" time="0.251" asserts="0" />
-                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerMapperTest.VerifyTaskMapperOperations" executed="True" result="Success" success="True" time="0.009" asserts="0" />
-                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerMapperTest.VerifyUserMapperOperations" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerMapperTest.VerifyProjectMapperOperations" executed="True" result="Success" success="True" time="0.359" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerMapperTest.VerifyTaskMapperOperations" executed="True" result="Success" success="True" time="0.010" asserts="0" />
+                      <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerMapperTest.VerifyUserMapperOperations" executed="True" result="Success" success="True" time="0.005" asserts="0" />
                     </results>
                   </test-suite>
-                  <test-suite type="TestFixture" name="ProjectManagerServiceTests" executed="True" result="Success" success="True" time="0.640" asserts="0">
+                  <test-suite type="TestFixture" name="ProjectManagerServiceTests" executed="True" result="Success" success="True" time="1.092" asserts="0">
                     <results>
                       <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_AddProject_Then_VerifyResult" executed="True" result="Success" success="True" time="0.002" asserts="0" />
                       <test-case name="ProjectManager.Tests.BusinessLayer.ProjectManagerServiceTests.When_AddTask_Then_VerifyResult" executed="True" result="Success" success="True" time="0.001" asserts="0" />
@@ -52,9 +52,9 @@
                   </test-suite>
                 </results>
               </test-suite>
-              <test-suite type="Namespace" name="ServiceLayer" executed="True" result="Success" success="True" time="0.060" asserts="0">
+              <test-suite type="Namespace" name="ServiceLayer" executed="True" result="Success" success="True" time="0.059" asserts="0">
                 <results>
-                  <test-suite type="TestFixture" name="ProjectManagerControllerTests" executed="True" result="Success" success="True" time="0.060" asserts="0">
+                  <test-suite type="TestFixture" name="ProjectManagerControllerTests" executed="True" result="Success" success="True" time="0.059" asserts="0">
                     <results>
                       <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_AddProject_Then_VerifyResults" executed="True" result="Success" success="True" time="0.002" asserts="0" />
                       <test-case name="ProjectManager.Tests.ServiceLayer.ProjectManagerControllerTests.When_AddTask_Then_VerifyResults" executed="True" result="Success" success="True" time="0.001" asserts="0" />

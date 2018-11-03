@@ -76,9 +76,10 @@ namespace ProjectManager.Tests.BusinessLayer
 
             // Act
             var taskRepository = new Repository<Task>(context.Object);
+            var parentTaskRepository = new Repository<ParentTask>(context.Object);
             var userRepository = new Repository<User>(context.Object);
             var projectRepository = new Repository<Project>(context.Object);
-            _mockProjectManagerService = new ProjectManagerService(taskRepository, projectRepository, userRepository);
+            _mockProjectManagerService = new ProjectManagerService(taskRepository, projectRepository, userRepository, parentTaskRepository);
         }
 
         [Test]

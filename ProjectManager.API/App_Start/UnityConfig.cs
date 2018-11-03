@@ -18,6 +18,7 @@ namespace ProjectManager.API
             
             container.RegisterType<IProjectManagerService, ProjectManagerService>();
             container.RegisterType<IRepository<Task>, Repository<Task>>();
+            container.RegisterType<IRepository<ParentTask>, Repository<ParentTask>>();
             container.RegisterType<IRepository<User>, Repository<User>>();
             container.RegisterType<IRepository<Project>, Repository<Project>>();
 

@@ -24,7 +24,21 @@ namespace ProjectManager.BusinessLayer.Mapper
             return task;
         }
 
-        public static Task Map(this TaskEntity taskEntity)
+        public static ParentTask Map(this TaskEntity taskEntity, ParentTask parentTask)
+        {
+            parentTask.ParentTaskName = taskEntity.TaskName;
+            return parentTask;
+        }
+
+        public static ParentTask Map(this TaskEntity taskEntity)
+        {
+            ParentTask parentTask = new ParentTask();
+            parentTask.ParentTaskId = taskEntity.TaskId;
+            parentTask.ParentTaskName = taskEntity.TaskName;
+            return parentTask;
+        }
+
+        public static Task MapTask(this TaskEntity taskEntity)
         {
             var task = new Task();
 
@@ -51,8 +65,8 @@ namespace ProjectManager.BusinessLayer.Mapper
             taskEntity.TaskName = task.TaskName;
             if (task.ParentTask != null)
             {
-                taskEntity.ParentTaskId = task.ParentTask.TaskId;
-                taskEntity.ParentTask = task.ParentTask.TaskName;
+                taskEntity.ParentTaskId = task.ParentTask.ParentTaskId;
+                taskEntity.ParentTask = task.ParentTask.ParentTaskName;
             }
             taskEntity.Priority = task.Priority;
             taskEntity.StartDate = task.StartDate;
@@ -69,6 +83,31 @@ namespace ProjectManager.BusinessLayer.Mapper
             return taskEntity;
         }
 
+        public static TaskEntity Map(this ParentTask parentTask)
+        {
+            var taskEntity = new TaskEntity();
+            taskEntity.TaskId = parentTask.ParentTaskId;
+            taskEntity.TaskName = parentTask.ParentTaskName;
+
+            return taskEntity;
+        }
+
+        public static List<TaskEntity> Map(this List<ParentTask> parentTaskList)
+        {
+            var taskEntityList = new List<TaskEntity>();
+
+            parentTaskList.ForEach(parentTask =>
+            {
+                var taskEntity = new TaskEntity();
+                taskEntity.TaskId = parentTask.ParentTaskId;
+                taskEntity.TaskName = parentTask.ParentTaskName;
+
+                taskEntityList.Add(taskEntity);
+            });
+
+            return taskEntityList;
+        }
+
         public static List<TaskEntity> Map(this List<Task> taskList)
         {
             var taskEntityList = new List<TaskEntity>();
@@ -81,8 +120,8 @@ namespace ProjectManager.BusinessLayer.Mapper
                 taskEntity.TaskName = task.TaskName;
                 if (task.ParentTask != null)
                 {
-                    taskEntity.ParentTaskId = task.ParentTask.TaskId;
-                    taskEntity.ParentTask = task.ParentTask.TaskName;
+                    taskEntity.ParentTaskId = task.ParentTask.ParentTaskId;
+                    taskEntity.ParentTask = task.ParentTask.ParentTaskName;
                 }
                 taskEntity.Priority = task.Priority;
                 taskEntity.StartDate = task.StartDate;

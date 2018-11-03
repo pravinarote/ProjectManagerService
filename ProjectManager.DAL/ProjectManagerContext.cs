@@ -10,11 +10,8 @@ namespace ProjectManager.DataLayer
             Database.SetInitializer(new ProjectManagerInitializer());
         }
 
-        //public ProjectManagerContext(ProjectManagerInitializer init) : base("ProjectManagerConn")
-        //{
-        //    Database.SetInitializer(init);
-        //}
 
+        public DbSet<ParentTask> ParentTasks { get; set; }
         public DbSet<Task> Tasks { get; set; }
 
         public DbSet<TaskStatus> TaskStatuses { get; set; }
