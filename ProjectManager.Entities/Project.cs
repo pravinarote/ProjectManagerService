@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -29,5 +30,7 @@ namespace ProjectManager.Entities
         public User User { get; set; }
         [ForeignKey("User")]
         public int? UserId { get; set; }
+
+        public ICollection<Task> Tasks { get; set; }
     }
 }
