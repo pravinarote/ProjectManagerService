@@ -32,12 +32,9 @@ namespace ProjectManager.BusinessLayer
 
         public int AddProject(ProjectEntity projectEntity)
         {
-            //var project = this.unitOfWork.ProjectRepository.Add(projectEntity.Map());
-
             var projectModel = projectEntity.Map();
-            if (projectEntity.ManagerId.HasValue)
-                projectModel.User = userRepository.Get(projectEntity.ManagerId.Value);
             var project = projectRepository.Add(projectModel);
+           
             return project.ProjectId;
         }
 

@@ -175,9 +175,9 @@ namespace ProjectManager.BusinessLayer.Mapper
             project.Priority = projectEntity.Priority;
             project.StartDate = projectEntity.StartDate;
             project.EndDate = projectEntity.EndDate;
-
-            //if (projectEntity.User != null)
             project.UserId = projectEntity.ManagerId;
+            //if (projectEntity.User != null)
+
             //if (projectEntity.ManagerId.HasValue)
             //    project.User = new User() { UserId = projectEntity.ManagerId.Value };
 
