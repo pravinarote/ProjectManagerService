@@ -33,7 +33,11 @@ namespace ProjectManager.BusinessLayer
         public int AddProject(ProjectEntity projectEntity)
         {
             //var project = this.unitOfWork.ProjectRepository.Add(projectEntity.Map());
-            var project = projectRepository.Add(projectEntity.Map());
+
+            var projectModel = projectEntity.Map();
+            if (projectEntity.ManagerId.HasValue)
+                projectModel.User = userRepository.Get(projectEntity.ManagerId.Value);
+            var project = projectRepository.Add(projectModel);
             return project.ProjectId;
         }
 
@@ -134,7 +138,10 @@ namespace ProjectManager.BusinessLayer
         public bool UpdateProject(ProjectEntity project)
         {
             var proj = projectRepository.Get(project.ProjectId);
-            projectRepository.Update(project.Map(proj));
+            var projectModel = project.Map(proj);
+            //if(project.ManagerId.HasValue)
+            //    projectModel.User = userRepository.Get(project.ManagerId.Value);
+            projectRepository.Update(projectModel);
 
             return true;
 

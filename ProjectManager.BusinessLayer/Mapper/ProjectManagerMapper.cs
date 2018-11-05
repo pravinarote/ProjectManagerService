@@ -158,8 +158,11 @@ namespace ProjectManager.BusinessLayer.Mapper
             project.Priority = projectEntity.Priority;
             project.StartDate = projectEntity.StartDate;
             project.EndDate = projectEntity.EndDate;
-            if (projectEntity.User != null)
-                project.UserId = projectEntity.User.UserId;
+            project.UserId = projectEntity.ManagerId;
+            //if(projectEntity.ManagerId.HasValue)
+            //project.User = new User() { UserId = projectEntity.ManagerId.Value };
+            //if (projectEntity.User != null)
+            //    project.UserId = projectEntity.User.UserId;
 
             return project;
         }
@@ -173,8 +176,10 @@ namespace ProjectManager.BusinessLayer.Mapper
             project.StartDate = projectEntity.StartDate;
             project.EndDate = projectEntity.EndDate;
 
-            if (projectEntity.User != null)
-                project.UserId = projectEntity.User.UserId;
+            //if (projectEntity.User != null)
+            project.UserId = projectEntity.ManagerId;
+            //if (projectEntity.ManagerId.HasValue)
+            //    project.User = new User() { UserId = projectEntity.ManagerId.Value };
 
             return project;
         }
@@ -187,9 +192,11 @@ namespace ProjectManager.BusinessLayer.Mapper
             projectEntity.Priority = project.Priority;
             projectEntity.StartDate = project.StartDate;
             projectEntity.EndDate = project.EndDate;
+            projectEntity.ManagerId = project.UserId;
             if (project.User != null)
             {
-                projectEntity.User = new UserEntity() { UserId = project.User.UserId };
+                projectEntity.ManagerId = project.User.UserId ;
+                projectEntity.ManagerName = project.User.FirstName + " " + project.User.LastName;
             }
 
             return projectEntity;
@@ -207,10 +214,12 @@ namespace ProjectManager.BusinessLayer.Mapper
                 projectEntity.Priority = project.Priority;
                 projectEntity.StartDate = project.StartDate;
                 projectEntity.EndDate = project.EndDate;
+                projectEntity.ManagerId = project.UserId;
 
                 if (project.User != null)
                 {
-                    projectEntity.User = new UserEntity() { UserId = project.User.UserId };
+                    projectEntity.ManagerId= project.User.UserId ;
+                    projectEntity.ManagerName = project.User.FirstName + " " + project.User.LastName;
                 }
 
                 projectEntityList.Add(projectEntity);

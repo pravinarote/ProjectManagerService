@@ -17,6 +17,8 @@ namespace ProjectManager.BusinessLayer.BusinessEntities
         public int NoOfCompletedTasks { get; set; }
 
         public DateTime EndDate { get; set; }
-        public UserEntity User { get; set; }
+        public int? ManagerId { get; set; }
+        public string ManagerName { get; set; }
+        //public UserEntity User { get; set; }
     }
 }
