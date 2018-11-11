@@ -108,6 +108,7 @@ namespace ProjectManager.API.Controllers
 
         [Route("ParentTasks/Update")]
         [HttpPut]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         public IHttpActionResult UpdateParentTask([FromBody]TaskEntity taskEntity)
         {
             if (taskEntity.TaskId > 0)
@@ -118,6 +119,7 @@ namespace ProjectManager.API.Controllers
         }
 
         [Route("Tasks/Update")]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         [HttpPut]
         public IHttpActionResult UpdateTask([FromBody]TaskEntity taskEntity)
         {
@@ -129,6 +131,7 @@ namespace ProjectManager.API.Controllers
         }
 
         [Route("Projects/Update")]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         [HttpPut]
         public IHttpActionResult UpdateProject([FromBody]ProjectEntity entity)
         {
@@ -141,6 +144,7 @@ namespace ProjectManager.API.Controllers
 
         [Route("Users/Update")]
         [HttpPut]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         public IHttpActionResult UpdateUser([FromBody]UserEntity entity)
         {
             if (entity.UserId > 0)
