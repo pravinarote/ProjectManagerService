@@ -23,7 +23,10 @@ namespace ProjectManager.API.Controllers
         [Route("Tasks/GetAll")]
         public IHttpActionResult GetAllTasks()
         {
-            return Ok(projectManagerService.GetAllTasks());
+            var parentTasks = projectManagerService.GetAllParentTasks();
+            var tasks = projectManagerService.GetAllTasks();
+            parentTasks.AddRange(tasks);
+            return Ok(parentTasks);
         }
 
         [HttpGet]

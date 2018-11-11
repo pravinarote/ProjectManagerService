@@ -93,7 +93,19 @@ namespace ProjectManager.BusinessLayer
         {
             //var tasks = this.unitOfWork.TaskRepository.GetAll().ToList();
             var tasks = taskRepository.GetAll().ToList();
-            return tasks.Map();
+            var taskEntities = tasks.Map();
+
+            taskEntities.ForEach(x =>
+            {
+                if (x.ParentTaskId.HasValue)
+                {
+                    var parentTask = parentTaskRepository.Get(x.ParentTaskId.Value);
+                    if(parentTask!=null)
+                    x.ParentTaskName = parentTask.ParentTaskName;
+                }
+            });
+
+            return taskEntities;
         }
 
         public List<TaskEntity> GetAllParentTasks()

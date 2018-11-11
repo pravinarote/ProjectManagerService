@@ -29,7 +29,7 @@ namespace ProjectManager.Tests.BusinessLayer
             task.TaskStatusId = 2;
             taskEntity = task.Map();
             taskEntity.IsTaskEnded = true;
-            taskEntity.Project = null;
+            //taskEntity.Project = null;
             Assert.NotNull(taskEntity);
             Assert.AreEqual(taskEntity.TaskName, task.TaskName);
 

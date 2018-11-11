@@ -12,19 +12,13 @@ namespace ProjectManager.BusinessLayer.Mapper
         public static Task Map(this TaskEntity taskEntity, Task task)
         {
             task.TaskName = taskEntity.TaskName;
-            task.Priority = taskEntity.Priority;
-            task.StartDate = taskEntity.StartDate;
-            task.EndDate = taskEntity.EndDate;
+            task.Priority = taskEntity.Priority.Value;
+            task.StartDate = taskEntity.StartDate.Value;
+            task.EndDate = taskEntity.EndDate.Value;
             task.TaskStatusId = taskEntity.IsTaskEnded ? 2 : 1;
             task.ParentTaskId = taskEntity.ParentTaskId;
-            if (taskEntity.Project != null)
-            {
-                task.ProjectId = taskEntity.Project.ProjectId;
-            }
-            if (taskEntity.User != null)
-            {
-                task.UserId = taskEntity.User.UserId;
-            }
+            task.ProjectId = taskEntity.ProjectId;
+            task.UserId = taskEntity.UserId;
             return task;
         }
 
@@ -48,19 +42,13 @@ namespace ProjectManager.BusinessLayer.Mapper
 
             task.TaskId = taskEntity.TaskId;
             task.TaskName = taskEntity.TaskName;
-            task.Priority = taskEntity.Priority;
-            task.StartDate = taskEntity.StartDate;
-            task.EndDate = taskEntity.EndDate;
+            task.Priority = taskEntity.Priority.Value;
+            task.StartDate = taskEntity.StartDate.Value;
+            task.EndDate = taskEntity.EndDate.Value;
             task.TaskStatusId = taskEntity.IsTaskEnded ? 2 : 1;
             task.ParentTaskId = taskEntity.ParentTaskId;
-            if (taskEntity.Project != null)
-            {
-                task.ProjectId = taskEntity.Project.ProjectId;
-            }
-            if (taskEntity.User != null)
-            {
-                task.UserId = taskEntity.User.UserId;
-            }
+            task.ProjectId = taskEntity.ProjectId;
+            task.UserId = taskEntity.UserId;
 
             return task;
         }
@@ -74,16 +62,22 @@ namespace ProjectManager.BusinessLayer.Mapper
             if (task.ParentTask != null)
             {
                 taskEntity.ParentTaskId = task.ParentTask.ParentTaskId;
-                taskEntity.ParentTask = task.ParentTask.ParentTaskName;
+                taskEntity.ParentTaskName = task.ParentTask.ParentTaskName;
             }
             taskEntity.Priority = task.Priority;
             taskEntity.StartDate = task.StartDate;
             taskEntity.EndDate = task.EndDate;
             taskEntity.IsTaskEnded = task.TaskStatusId == 2;
-            if (task.ProjectId.HasValue)
-                taskEntity.Project = new ProjectEntity() { ProjectId = task.ProjectId.Value };
-            if (task.UserId.HasValue)
-                taskEntity.User = new UserEntity() { UserId = task.UserId.Value };
+            if (task.Project != null)
+            {
+                taskEntity.ProjectId = task.Project.ProjectId;
+                taskEntity.ProjectName = task.Project.ProjectName;
+            }
+            if (task.User != null)
+            {
+                taskEntity.UserId = task.User.UserId;
+                taskEntity.UserName = task.User.FirstName + " " + task.User.LastName;
+            }
 
             if (task.TaskStatus != null)
             {
@@ -128,19 +122,13 @@ namespace ProjectManager.BusinessLayer.Mapper
 
                 taskEntity.TaskId = task.TaskId;
                 taskEntity.TaskName = task.TaskName;
-                if (task.ParentTask != null)
-                {
-                    taskEntity.ParentTaskId = task.ParentTask.ParentTaskId;
-                    taskEntity.ParentTask = task.ParentTask.ParentTaskName;
-                }
+                taskEntity.ParentTaskId = task.ParentTaskId;
                 taskEntity.Priority = task.Priority;
                 taskEntity.StartDate = task.StartDate;
                 taskEntity.EndDate = task.EndDate;
                 taskEntity.IsTaskEnded = task.TaskStatusId == 2;
-                if (task.ProjectId.HasValue)
-                    taskEntity.Project = new ProjectEntity() { ProjectId = task.ProjectId.Value };
-                if (task.UserId.HasValue)
-                    taskEntity.User = new UserEntity() { UserId = task.UserId.Value };
+                taskEntity.ProjectId = task.ProjectId;
+                taskEntity.UserId = task.UserId;
                 if (task.TaskStatus != null)
                 {
                     taskEntity.TaskStatusEntity = new TaskStatusEntity() { Id = task.TaskStatus.Id, Name = task.TaskStatus.Name };
@@ -195,7 +183,7 @@ namespace ProjectManager.BusinessLayer.Mapper
             projectEntity.ManagerId = project.UserId;
             if (project.User != null)
             {
-                projectEntity.ManagerId = project.User.UserId ;
+                projectEntity.ManagerId = project.User.UserId;
                 projectEntity.ManagerName = project.User.FirstName + " " + project.User.LastName;
             }
 
@@ -218,7 +206,7 @@ namespace ProjectManager.BusinessLayer.Mapper
 
                 if (project.User != null)
                 {
-                    projectEntity.ManagerId= project.User.UserId ;
+                    projectEntity.ManagerId = project.User.UserId;
                     projectEntity.ManagerName = project.User.FirstName + " " + project.User.LastName;
                 }
 
