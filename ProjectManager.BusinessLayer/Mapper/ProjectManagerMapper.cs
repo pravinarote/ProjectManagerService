@@ -64,6 +64,7 @@ namespace ProjectManager.BusinessLayer.Mapper
             taskEntity.StartDate = task.StartDate;
             taskEntity.EndDate = task.EndDate;
             taskEntity.IsTaskEnded = task.TaskStatusId == 2;
+            taskEntity.TaskStatusId = task.TaskStatusId;
             taskEntity.ProjectId = task.ProjectId;
             taskEntity.UserId = task.UserId;
             return taskEntity;
@@ -109,6 +110,7 @@ namespace ProjectManager.BusinessLayer.Mapper
                 taskEntity.StartDate = task.StartDate;
                 taskEntity.EndDate = task.EndDate;
                 taskEntity.IsTaskEnded = task.TaskStatusId == 2;
+                taskEntity.TaskStatusId = task.TaskStatusId;
                 taskEntity.ProjectId = task.ProjectId;
                 taskEntity.UserId = task.UserId;
                 if (task.TaskStatus != null)

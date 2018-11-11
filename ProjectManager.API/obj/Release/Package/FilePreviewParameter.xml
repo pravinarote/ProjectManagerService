@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Defulat Web Site/ProjectManager" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\FSD\\Final\ Assessment\\ProjectManagerService\\ProjectManager\.API\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\FSD\\Final\ Assessment\\ProjectManagerService\\ProjectManager\.API\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-ProjectManager.API-20181024022800.mdf;Initial Catalog=aspnet-ProjectManager.API-20181024022800;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\FSD\\Final\ Assessment\\ProjectManagerService\\ProjectManager\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="ProjectManagerConn-Web.config Connection String" description="" value="Data Source=DOTNET;Initial Catalog=ProjectManager;Integrated Security=True;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\FSD\\Final\ Assessment\\ProjectManagerService\\ProjectManager\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ProjectManagerConn']/@connectionString" />
+  </parameter>
+</parameters>

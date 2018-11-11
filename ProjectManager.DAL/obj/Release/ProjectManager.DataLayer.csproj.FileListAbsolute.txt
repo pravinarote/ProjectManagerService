@@ -1,0 +1,12 @@
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\bin\Release\ProjectManager.DataLayer.dll.config
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\bin\Release\ProjectManager.DataLayer.dll
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\bin\Release\ProjectManager.DataLayer.pdb
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\bin\Release\EntityFramework.dll
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\bin\Release\ProjectManager.Entities.dll
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\bin\Release\ProjectManager.Entities.pdb
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\bin\Release\EntityFramework.xml
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\obj\Release\ProjectManager.DataLayer.csprojResolveAssemblyReference.cache
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\obj\Release\ProjectManager.DataLayer.dll
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.DAL\obj\Release\ProjectManager.DataLayer.pdb

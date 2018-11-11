@@ -84,9 +84,15 @@ namespace ProjectManager.BusinessLayer
 
         public List<ProjectEntity> GetAllProject()
         {
-            //var projects = this.unitOfWork.ProjectRepository.GetAll().ToList();
             var projects = projectRepository.GetAll().ToList();
-            return projects.Map();
+            var projectEntities = projects.Map();
+            projectEntities.ForEach(x =>
+            {
+                var taskList = taskRepository.GetAll().ToList();
+                x.NoOfTasks = taskList.Count(y => y.ProjectId == x.ProjectId);
+                x.NoOfCompletedTasks = taskList.Count(y => y.ProjectId == x.ProjectId && y.TaskStatusId == 2);
+            });
+            return projectEntities;
         }
 
         public List<TaskEntity> GetAllTasks()

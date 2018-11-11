@@ -14,6 +14,7 @@ namespace ProjectManager.BusinessLayer.BusinessEntities
         public bool IsTaskEnded { get; set; }
 
         public TaskStatusEntity TaskStatusEntity { get; set; }
+        public int? TaskStatusId { get; set; }
         public int? ProjectId { get; set; }
         public string ProjectName { get; set; }
         public int? UserId { get; set; }
