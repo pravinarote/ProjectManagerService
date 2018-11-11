@@ -131,6 +131,7 @@ namespace ProjectManager.BusinessLayer.Mapper
             project.StartDate = projectEntity.StartDate;
             project.EndDate = projectEntity.EndDate;
             project.UserId = projectEntity.ManagerId;
+            project.IsSuspended = false;
             //if(projectEntity.ManagerId.HasValue)
             //project.User = new User() { UserId = projectEntity.ManagerId.Value };
             //if (projectEntity.User != null)
@@ -148,6 +149,7 @@ namespace ProjectManager.BusinessLayer.Mapper
             project.StartDate = projectEntity.StartDate;
             project.EndDate = projectEntity.EndDate;
             project.UserId = projectEntity.ManagerId;
+            project.IsSuspended = false;
             //if (projectEntity.User != null)
 
             //if (projectEntity.ManagerId.HasValue)
@@ -165,6 +167,7 @@ namespace ProjectManager.BusinessLayer.Mapper
             projectEntity.StartDate = project.StartDate;
             projectEntity.EndDate = project.EndDate;
             projectEntity.ManagerId = project.UserId;
+            projectEntity.IsSuspended = project.IsSuspended;
             if (project.User != null)
             {
                 projectEntity.ManagerId = project.User.UserId;
@@ -187,6 +190,7 @@ namespace ProjectManager.BusinessLayer.Mapper
                 projectEntity.StartDate = project.StartDate;
                 projectEntity.EndDate = project.EndDate;
                 projectEntity.ManagerId = project.UserId;
+                projectEntity.IsSuspended = project.IsSuspended;
 
                 if (project.User != null)
                 {

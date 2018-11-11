@@ -19,6 +19,7 @@ namespace ProjectManager.BusinessLayer.BusinessEntities
         public DateTime? EndDate { get; set; }
         public int? ManagerId { get; set; }
         public string ManagerName { get; set; }
+        public bool IsSuspended { get; set; }
         //public UserEntity User { get; set; }
     }
 }

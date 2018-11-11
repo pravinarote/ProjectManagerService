@@ -30,6 +30,8 @@ namespace ProjectManager.Entities
         [ForeignKey("User")]
         public int? UserId { get; set; }
 
+        public bool IsSuspended { get; set; }
+
         public ICollection<Task> Tasks { get; set; }
     }
 }

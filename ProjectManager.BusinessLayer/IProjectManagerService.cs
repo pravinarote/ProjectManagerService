@@ -22,6 +22,7 @@ namespace ProjectManager.BusinessLayer
         bool UpdateProject(ProjectEntity project);
         bool DeleteProject(int id);
         int AddProject(ProjectEntity projectEntity);
+        bool SuspendProject(int projectId);
 
         List<UserEntity> GetAllUsers();
         UserEntity GetUserById(int id);

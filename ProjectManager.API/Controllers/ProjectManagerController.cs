@@ -160,6 +160,12 @@ namespace ProjectManager.API.Controllers
             return Ok(projectManagerService.EndTask(id));
         }
 
+        [Route("Projects/Suspend/{id}")]
+        public IHttpActionResult SuspendProject(int id)
+        {
+            return Ok(projectManagerService.SuspendProject(id));
+        }
+
         [Route("Tasks/Delete/{id}")]
         [HttpDelete]
         public IHttpActionResult DeleteTask(int id)

@@ -202,6 +202,15 @@ namespace ProjectManager.BusinessLayer
             return true;
         }
 
+        public bool SuspendProject(int projectId)
+        {
+            var project = projectRepository.Get(projectId);
+            project.IsSuspended = true;
+            projectRepository.Update(project);
+
+            return true;
+        }
+
         public bool UpdateParentTask(TaskEntity taskEntity)
         {
             var taskModel = parentTaskRepository.Get(taskEntity.TaskId);

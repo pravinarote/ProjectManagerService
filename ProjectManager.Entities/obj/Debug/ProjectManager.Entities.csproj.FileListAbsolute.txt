@@ -2,3 +2,4 @@ C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.Entities\bin\Debug\
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.Entities\bin\Debug\ProjectManager.Entities.pdb
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.Entities\obj\Debug\ProjectManager.Entities.dll
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.Entities\obj\Debug\ProjectManager.Entities.pdb
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.Entities\obj\Debug\ProjectManager.Entities.csprojResolveAssemblyReference.cache
