@@ -20,8 +20,8 @@ namespace ProjectManager.BusinessLayer
         //    this.unitOfWork = unitOfWork;
         //}
 
-        public ProjectManagerService(IRepository<Task> taskRepository, 
-            IRepository<Project> projectRepository, IRepository<User> userRepository, 
+        public ProjectManagerService(IRepository<Task> taskRepository,
+            IRepository<Project> projectRepository, IRepository<User> userRepository,
             IRepository<ParentTask> parentTaskRepository)
         {
             this.taskRepository = taskRepository;
@@ -34,7 +34,7 @@ namespace ProjectManager.BusinessLayer
         {
             var projectModel = projectEntity.Map();
             var project = projectRepository.Add(projectModel);
-           
+
             return project.ProjectId;
         }
 
@@ -42,7 +42,7 @@ namespace ProjectManager.BusinessLayer
         {
             var parentTask = parentTaskRepository.Add(taskEntity.Map());
             return parentTask.ParentTaskId;
-                
+
         }
 
         public int AddTask(TaskEntity taskEntity)
@@ -100,8 +100,8 @@ namespace ProjectManager.BusinessLayer
                 if (x.ParentTaskId.HasValue)
                 {
                     var parentTask = parentTaskRepository.Get(x.ParentTaskId.Value);
-                    if(parentTask!=null)
-                    x.ParentTaskName = parentTask.ParentTaskName;
+                    if (parentTask != null)
+                        x.ParentTaskName = parentTask.ParentTaskName;
                 }
             });
 
@@ -129,7 +129,30 @@ namespace ProjectManager.BusinessLayer
         public TaskEntity GetTaskById(int id)
         {
             var task = taskRepository.Get(id);
-            return task.Map();
+            var taskEntity = task.Map();
+            if (taskEntity.ParentTaskId.HasValue)
+            {
+                var parentTask = parentTaskRepository.Get(taskEntity.ParentTaskId.Value);
+                if (parentTask != null)
+                    taskEntity.ParentTaskName = parentTask.ParentTaskName;
+            }
+            if(taskEntity.ProjectId.HasValue)
+            {
+                var project = projectRepository.Get(taskEntity.ProjectId.Value);
+                if(project!=null)
+                {
+                    taskEntity.ProjectName = project.ProjectName;
+                }
+            }
+            if (taskEntity.UserId.HasValue)
+            {
+                var user = userRepository.Get(taskEntity.UserId.Value);
+                if(user!=null)
+                {
+                    taskEntity.UserName = user.FirstName + " " + user.LastName;
+                }
+            }
+            return taskEntity;
         }
 
         public TaskEntity GetParentTaskById(int id)
@@ -160,6 +183,23 @@ namespace ProjectManager.BusinessLayer
         {
             var taskModel = taskRepository.Get(taskEntity.TaskId);
             taskRepository.Update(taskEntity.Map(taskModel));
+
+            return true;
+        }
+
+        public bool EndTask(int taskId)
+        {
+            var taskModel = taskRepository.Get(taskId);
+            taskModel.TaskStatusId = 2;
+            taskRepository.Update(taskModel);
+
+            return true;
+        }
+
+        public bool UpdateParentTask(TaskEntity taskEntity)
+        {
+            var taskModel = parentTaskRepository.Get(taskEntity.TaskId);
+            parentTaskRepository.Update(taskEntity.Map(taskModel));
 
             return true;
         }

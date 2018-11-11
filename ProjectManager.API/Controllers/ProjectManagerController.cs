@@ -106,6 +106,17 @@ namespace ProjectManager.API.Controllers
             return Ok(projectManagerService.AddUser(entity));
         }
 
+        [Route("ParentTasks/Update")]
+        [HttpPut]
+        public IHttpActionResult UpdateParentTask([FromBody]TaskEntity taskEntity)
+        {
+            if (taskEntity.TaskId > 0)
+            {
+                return Ok(projectManagerService.UpdateParentTask(taskEntity));
+            }
+            return Ok(false);
+        }
+
         [Route("Tasks/Update")]
         [HttpPut]
         public IHttpActionResult UpdateTask([FromBody]TaskEntity taskEntity)
@@ -137,6 +148,12 @@ namespace ProjectManager.API.Controllers
                 return Ok(projectManagerService.UpdateUser(entity));
             }
             return Ok(false);
+        }
+
+        [Route("Tasks/End/{id}")]
+        public IHttpActionResult EndTask(int id)
+        {
+            return Ok(projectManagerService.EndTask(id));
         }
 
         [Route("Tasks/Delete/{id}")]

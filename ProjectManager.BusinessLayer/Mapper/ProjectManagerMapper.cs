@@ -59,31 +59,13 @@ namespace ProjectManager.BusinessLayer.Mapper
 
             taskEntity.TaskId = task.TaskId;
             taskEntity.TaskName = task.TaskName;
-            if (task.ParentTask != null)
-            {
-                taskEntity.ParentTaskId = task.ParentTask.ParentTaskId;
-                taskEntity.ParentTaskName = task.ParentTask.ParentTaskName;
-            }
+            taskEntity.ParentTaskId = task.ParentTaskId;
             taskEntity.Priority = task.Priority;
             taskEntity.StartDate = task.StartDate;
             taskEntity.EndDate = task.EndDate;
             taskEntity.IsTaskEnded = task.TaskStatusId == 2;
-            if (task.Project != null)
-            {
-                taskEntity.ProjectId = task.Project.ProjectId;
-                taskEntity.ProjectName = task.Project.ProjectName;
-            }
-            if (task.User != null)
-            {
-                taskEntity.UserId = task.User.UserId;
-                taskEntity.UserName = task.User.FirstName + " " + task.User.LastName;
-            }
-
-            if (task.TaskStatus != null)
-            {
-                taskEntity.TaskStatusEntity = new TaskStatusEntity() { Id = task.TaskStatus.Id, Name = task.TaskStatus.Name };
-            }
-
+            taskEntity.ProjectId = task.ProjectId;
+            taskEntity.UserId = task.UserId;
             return taskEntity;
         }
 
