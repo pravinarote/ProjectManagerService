@@ -106,8 +106,8 @@ namespace ProjectManager.BusinessLayer
                 if (x.ParentTaskId.HasValue)
                 {
                     var parentTask = parentTaskRepository.Get(x.ParentTaskId.Value);
-                    if (parentTask != null)
-                        x.ParentTaskName = parentTask.ParentTaskName;
+                    //if (parentTask != null)
+                    x.ParentTaskName = parentTask.ParentTaskName;
                 }
             });
 
@@ -139,24 +139,24 @@ namespace ProjectManager.BusinessLayer
             if (taskEntity.ParentTaskId.HasValue)
             {
                 var parentTask = parentTaskRepository.Get(taskEntity.ParentTaskId.Value);
-                if (parentTask != null)
-                    taskEntity.ParentTaskName = parentTask.ParentTaskName;
+                //if (parentTask != null)
+                taskEntity.ParentTaskName = parentTask.ParentTaskName;
             }
-            if(taskEntity.ProjectId.HasValue)
+            if (taskEntity.ProjectId.HasValue)
             {
                 var project = projectRepository.Get(taskEntity.ProjectId.Value);
-                if(project!=null)
-                {
-                    taskEntity.ProjectName = project.ProjectName;
-                }
+                //if(project!=null)
+                //{
+                taskEntity.ProjectName = project.ProjectName;
+                //}
             }
             if (taskEntity.UserId.HasValue)
             {
                 var user = userRepository.Get(taskEntity.UserId.Value);
-                if(user!=null)
-                {
-                    taskEntity.UserName = user.FirstName + " " + user.LastName;
-                }
+                //if(user!=null)
+                //{
+                taskEntity.UserName = user.FirstName + " " + user.LastName;
+                //}
             }
             return taskEntity;
         }

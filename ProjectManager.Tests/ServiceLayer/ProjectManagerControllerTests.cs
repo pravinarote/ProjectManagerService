@@ -29,7 +29,15 @@ namespace ProjectManager.Tests.ServiceLayer
         {
             var result = controller.GetAllTasks() as OkNegotiatedContentResult<List<TaskEntity>>;
             Assert.IsNotNull(result);
-            Assert.AreEqual(result.Content.Count, 1);
+            //Assert.AreEqual(result.Content.Count, 2);
+        }
+
+        [Test]
+        public void When_GetAllParentTasks_Then_ShouldReturnAllTasks()
+        {
+            var result = controller.GetAllParentTasks() as OkNegotiatedContentResult<List<TaskEntity>>;
+            Assert.IsNotNull(result);
+            //Assert.AreEqual(result.Content.Count, 1);
         }
 
         [Test]
@@ -70,6 +78,13 @@ namespace ProjectManager.Tests.ServiceLayer
         }
 
         [Test]
+        public void When_GetParentTaskById_Then_VerifyResults()
+        {
+            var result = controller.GetParentTaskById(1) as OkNegotiatedContentResult<TaskEntity>;
+            Assert.IsNotNull(result);
+        }
+
+        [Test]
         public void When_AddUser_Then_VerifyResults()
         {
             var user = TestDataHelper.GetUser().Map();
@@ -94,6 +109,14 @@ namespace ProjectManager.Tests.ServiceLayer
         }
 
         [Test]
+        public void When_AddParentTask_Then_VerifyResults()
+        {
+            var project = TestDataHelper.GetTask().Map();
+            var result = controller.AddParentTask(project);
+            Assert.NotNull(result);
+        }
+
+        [Test]
         public void When_UpdateTask_Then_VerifyResults()
         {
             var project = TestDataHelper.GetTask().Map();
@@ -101,8 +124,37 @@ namespace ProjectManager.Tests.ServiceLayer
             var result = controller.UpdateTask(project);
             Assert.NotNull(result);
 
-            project .TaskId=0;
+            project.TaskId = 0;
             result = controller.UpdateTask(project);
+            Assert.NotNull(result);
+        }
+
+        [Test]
+        public void When_EndTask_Then_VerifyResults()
+        {
+            var project = TestDataHelper.GetTask().Map();
+            project.TaskId = 10;
+            var result = controller.EndTask(project.TaskId);
+            Assert.NotNull(result);
+        }
+
+        [Test]
+        public void When_SuspendProject_Then_VerifyResults()
+        {
+            var result = controller.SuspendProject(1);
+            Assert.NotNull(result);
+        }
+
+        [Test]
+        public void When_UpdateParentTask_Then_VerifyResults()
+        {
+            var project = TestDataHelper.GetTask().Map();
+            project.TaskId = 10;
+            var result = controller.UpdateParentTask(project);
+            Assert.NotNull(result);
+
+            project.TaskId = 0;
+            result = controller.UpdateParentTask(project);
             Assert.NotNull(result);
         }
 
@@ -122,7 +174,7 @@ namespace ProjectManager.Tests.ServiceLayer
         public void When_UpdateProject_Then_VerifyResults()
         {
             var project = TestDataHelper.GetProject().Map();
-            var result = controller.UpdateProject( project);
+            var result = controller.UpdateProject(project);
             Assert.NotNull(result);
 
             project.ProjectId = 0;
@@ -166,15 +218,26 @@ namespace ProjectManager.Tests.ServiceLayer
 
             var taskList = TestDataHelper.GetTaskList().Map();
             projectManagerService.Setup(x => x.GetAllTasks()).Returns(taskList);
+            projectManagerService.Setup(x => x.GetAllParentTasks()).Returns(taskList);
             projectManagerService.Setup(mr => mr.GetTaskById(It.IsAny<int>()));
-                
+            projectManagerService.Setup(mr => mr.GetParentTaskById(It.IsAny<int>()));
+
             projectManagerService.Setup(mr => mr.AddTask(It.IsAny<TaskEntity>())).Returns(
                 (TaskEntity target) =>
                 {
                     target.TaskId = 101;
                     return target.TaskId;
                 });
+            projectManagerService.Setup(mr => mr.AddParentTask(It.IsAny<TaskEntity>())).Returns(
+                (TaskEntity target) =>
+                {
+                    target.TaskId = 101;
+                    return target.TaskId;
+                });
             projectManagerService.Setup(mr => mr.UpdateTask(It.IsAny<TaskEntity>())).Returns(true);
+            projectManagerService.Setup(mr => mr.EndTask(It.IsAny<int>())).Returns(true);
+            projectManagerService.Setup(mr => mr.SuspendProject(It.IsAny<int>())).Returns(true);
+            projectManagerService.Setup(mr => mr.UpdateParentTask(It.IsAny<TaskEntity>())).Returns(true);
             projectManagerService.Setup(x => x.DeleteTask(It.IsAny<int>())).Returns(true);
 
             var projectList = TestDataHelper.GetProjectList().Map();

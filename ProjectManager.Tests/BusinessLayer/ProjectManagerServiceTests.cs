@@ -18,6 +18,23 @@ namespace ProjectManager.Tests.BusinessLayer
 
         public ProjectManagerServiceTests()
         {
+            var parentTaskList = TestDataHelper.GetParentTaskList();
+            var parentTask = TestDataHelper.GetParentTask();
+            var dbSetMockParentTask = new Mock<DbSet<ParentTask>>();
+
+            dbSetMockParentTask.Setup(x => x.Find(It.IsAny<int>())).Returns(parentTask);
+            dbSetMockParentTask.Setup(x => x.Add(It.IsAny<ParentTask>())).Returns(parentTask);
+            dbSetMockParentTask.Setup(x => x.Remove(It.IsAny<ParentTask>())).Returns(parentTask);
+
+            dbSetMockParentTask.As<IQueryable<ParentTask>>().Setup(x => x.Provider).Returns
+                                                 (parentTaskList.AsQueryable().Provider);
+            dbSetMockParentTask.As<IQueryable<ParentTask>>().Setup(x => x.Expression).
+                                                 Returns(parentTaskList.AsQueryable().Expression);
+            dbSetMockParentTask.As<IQueryable<ParentTask>>().Setup(x => x.ElementType).Returns
+                                                 (parentTaskList.AsQueryable().ElementType);
+            dbSetMockParentTask.As<IQueryable<ParentTask>>().Setup(x => x.GetEnumerator()).Returns
+                                                 (parentTaskList.AsQueryable().GetEnumerator());
+
             var taskList = TestDataHelper.GetTaskList();
             var taskObject = TestDataHelper.GetTask();
             var dbSetMockTask = new Mock<DbSet<Task>>();
@@ -71,6 +88,7 @@ namespace ProjectManager.Tests.BusinessLayer
 
             var context = new Mock<ProjectManagerContext>();
             context.Setup(x => x.Set<Task>()).Returns(dbSetMockTask.Object);
+            context.Setup(x => x.Set<ParentTask>()).Returns(dbSetMockParentTask.Object);
             context.Setup(x => x.Set<User>()).Returns(dbSetMockUser.Object);
             context.Setup(x => x.Set<Project>()).Returns(dbSetMockProject.Object);
 
@@ -86,6 +104,13 @@ namespace ProjectManager.Tests.BusinessLayer
         public void When_GetAllTasks_Then_VerifyResult()
         {
             var taskList = _mockProjectManagerService.GetAllTasks();
+            Assert.NotNull(taskList);
+        }
+
+        [Test]
+        public void When_GetAllParentTasks_Then_VerifyResult()
+        {
+            var taskList = _mockProjectManagerService.GetAllParentTasks();
 
             Assert.NotNull(taskList);
             Assert.AreEqual(taskList.Count, 1);
@@ -118,6 +143,13 @@ namespace ProjectManager.Tests.BusinessLayer
         }
 
         [Test]
+        public void When_GetParentTaskById_Then_VerifyResult()
+        {
+            var projects = _mockProjectManagerService.GetParentTaskById(1);
+            Assert.NotNull(projects);
+        }
+
+        [Test]
         public void When_GetUserById_Then_VerifyResult()
         {
             var users = _mockProjectManagerService.GetUserById(1);
@@ -129,6 +161,10 @@ namespace ProjectManager.Tests.BusinessLayer
         public void When_GetTaskById_Then_VerifyResult()
         {
             var tasks = _mockProjectManagerService.GetTaskById(1);
+
+            Assert.NotNull(tasks);
+
+            tasks = _mockProjectManagerService.GetTaskById(3);
 
             Assert.NotNull(tasks);
         }
@@ -167,12 +203,48 @@ namespace ProjectManager.Tests.BusinessLayer
         }
 
         [Test]
+        public void When_AddParentTask_Then_VerifyResult()
+        {
+            var parentTaskModel = TestDataHelper.GetParentTask().Map();
+            var parentTask = _mockProjectManagerService.AddParentTask(parentTaskModel);
+
+            Assert.NotNull(parentTask);
+        }
+
+        [Test]
         public void When_UpdateProject_Then_VerifyResult()
         {
             var projectModel = TestDataHelper.GetProject().Map();
             var project = _mockProjectManagerService.UpdateProject(projectModel);
 
             Assert.NotNull(project);
+        }
+
+        [Test]
+        public void When_SuspendProject_Then_VerifyResult()
+        {
+            var projectModel = TestDataHelper.GetProject().Map();
+            var project = _mockProjectManagerService.SuspendProject(projectModel.ProjectId);
+
+            Assert.NotNull(project);
+        }
+
+        [Test]
+        public void When_UpdateParentTask_Then_VerifyResult()
+        {
+            var parentTaskModel = TestDataHelper.GetParentTask().Map();
+            var parentTask = _mockProjectManagerService.UpdateParentTask(parentTaskModel);
+
+            Assert.NotNull(parentTask);
+        }
+
+        [Test]
+        public void When_EndTask_Then_VerifyResult()
+        {
+            var parentTaskModel = TestDataHelper.GetParentTask().Map();
+            var parentTask = _mockProjectManagerService.EndTask(parentTaskModel.TaskId);
+
+            Assert.NotNull(parentTask);
         }
 
         [Test]

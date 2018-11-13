@@ -113,10 +113,10 @@ namespace ProjectManager.BusinessLayer.Mapper
                 taskEntity.TaskStatusId = task.TaskStatusId;
                 taskEntity.ProjectId = task.ProjectId;
                 taskEntity.UserId = task.UserId;
-                if (task.TaskStatus != null)
-                {
-                    taskEntity.TaskStatusEntity = new TaskStatusEntity() { Id = task.TaskStatus.Id, Name = task.TaskStatus.Name };
-                }
+                //if (task.TaskStatus != null)
+                //{
+                //    taskEntity.TaskStatusEntity = new TaskStatusEntity() { Id = task.TaskStatus.Id, Name = task.TaskStatus.Name };
+                //}
 
                 taskEntityList.Add(taskEntity);
             });

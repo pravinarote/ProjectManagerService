@@ -26,6 +26,7 @@ namespace ProjectManager.Tests.BusinessLayer
             taskEntity = task.Map();
             task.TaskStatusId = 1;
             taskEntity = task.Map();
+            taskEntity.IsTaskEnded = false;
             task.TaskStatusId = 2;
             taskEntity = task.Map();
             taskEntity.IsTaskEnded = true;
@@ -34,26 +35,42 @@ namespace ProjectManager.Tests.BusinessLayer
             Assert.AreEqual(taskEntity.TaskName, task.TaskName);
 
             var taskList = TestDataHelper.GetTaskList().ToList();
+
             var taskEntityList = taskList.Map().ToList();
             Assert.NotNull(taskEntityList);
             Assert.AreEqual(taskList.Count, taskEntityList.Count);
 
-            
+
             var taskModel = taskEntity.Map(task);
             Assert.NotNull(taskModel);
             Assert.AreEqual(taskEntity.TaskName, taskModel.TaskName);
 
             task.ParentTask = null;
             task.TaskStatusId = 1;
+            taskEntity.IsTaskEnded = false;
             taskModel = taskEntity.Map(task);
 
             taskModel = taskEntity.MapTask();
             Assert.NotNull(taskModel);
 
             task.ParentTask = null;
-            task.TaskStatusId = 1;
+            task.TaskStatusId = 2;
             taskModel = taskEntity.MapTask();
             Assert.AreEqual(taskEntity.TaskName, taskModel.TaskName);
+        }
+
+        [Test]
+        public void VerifyParentTaskMapperOperations()
+        {
+            var parentTask = TestDataHelper.GetParentTask();
+            var entity = parentTask.Map();
+            Assert.NotNull(parentTask);
+            Assert.AreEqual(parentTask.ParentTaskName, entity.TaskName);
+
+            var taskList = TestDataHelper.GetParentTaskList().ToList();
+            var taskEntityList = taskList.Map().ToList();
+            Assert.NotNull(taskEntityList);
+            Assert.AreEqual(taskList.Count, taskEntityList.Count);
         }
 
         [Test]
@@ -64,10 +81,22 @@ namespace ProjectManager.Tests.BusinessLayer
             Assert.NotNull(projectEntity);
             Assert.AreEqual(project.ProjectName, projectEntity.ProjectName);
 
+            project.User = null;
+            project.UserId = null;
+            projectEntity = project.Map();
+            Assert.NotNull(projectEntity);
+            Assert.AreEqual(project.ProjectName, projectEntity.ProjectName);
+
             var projectList = TestDataHelper.GetProjectList();
             var projectEntityList = projectList.Map();
             Assert.NotNull(projectEntityList);
             Assert.AreEqual(projectList.Count, projectEntityList.Count);
+
+            projectList = TestDataHelper.GetProjectList();
+            var newProject = TestDataHelper.GetProject();
+            project.User = null;
+            projectList.Add(newProject);
+            projectEntityList = projectList.Map();
 
             var projectModel = projectEntity.Map(project);
             Assert.NotNull(projectModel);
