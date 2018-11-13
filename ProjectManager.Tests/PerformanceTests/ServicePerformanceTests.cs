@@ -28,220 +28,121 @@ namespace ProjectManager.Tests.PerformanceTests
             _counter = context.GetCounter("ProjectManagerServiceCounter");
         }
 
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_GetAllTasks_Then_ShouldReturnAllTasks_Iterations()
-        {
-            var result = controller.GetAllTasks() as OkNegotiatedContentResult<List<TaskEntity>>;
-            Assert.IsNotNull(result);
-        }
-
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_GetAllTasks_Then_ShouldReturnAllTasks_Throughput()
-        {
-            var result = controller.GetAllTasks() as OkNegotiatedContentResult<List<TaskEntity>>;
-            Assert.IsNotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
-        [CounterMeasurement("ProjectManagerServiceCounter")]
-        [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_GetAllParentTasks_Then_ShouldReturnAllTasks_Iterations()
+        public void When_GetAllParentTasks_Then_ShouldReturnAllTasks()
         {
             var result = controller.GetAllParentTasks() as OkNegotiatedContentResult<List<TaskEntity>>;
             Assert.IsNotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_GetAllParentTasks_Then_ShouldReturnAllTasks_Throughput()
-        {
-            var result = controller.GetAllParentTasks() as OkNegotiatedContentResult<List<TaskEntity>>;
-            Assert.IsNotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_GetAllProjects_Then_ShouldReturnAllProjects_Iterations()
+        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
+        public void When_GetAllProjects_Then_ShouldReturnAllProjects()
         {
             var result = controller.GetAllProjects() as OkNegotiatedContentResult<List<ProjectEntity>>;
             Assert.IsNotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_GetAllProjects_Then_ShouldReturnAllProjects_Throughput()
-        {
-            var result = controller.GetAllProjects() as OkNegotiatedContentResult<List<ProjectEntity>>;
-            Assert.IsNotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_GetAllUsers_Then_VerifyResults_Iteartions()
+        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
+        public void When_GetAllUsers_Then_VerifyResults()
         {
             var result = controller.GetAllUsers() as OkNegotiatedContentResult<List<UserEntity>>;
             Assert.IsNotNull(result);
             Assert.AreEqual(result.Content.Count, 1);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_GetAllUsers_Then_VerifyResults_Throughput()
-        {
-            var result = controller.GetAllUsers() as OkNegotiatedContentResult<List<UserEntity>>;
-            Assert.IsNotNull(result);
-            Assert.AreEqual(result.Content.Count, 1);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_GetUserById_Then_VerifyResults_Iterations()
+        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
+        public void When_GetUserById_Then_VerifyResults()
         {
             var result = controller.GetUserById(1) as OkNegotiatedContentResult<UserEntity>;
             Assert.IsNotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_GetUserById_Then_VerifyResults_Throughput()
-        {
-            var result = controller.GetUserById(1) as OkNegotiatedContentResult<UserEntity>;
-            Assert.IsNotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_GetProjectById_Then_VerifyResults_Iterations()
+        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
+        public void When_GetProjectById_Then_VerifyResults()
         {
             var result = controller.GetProjectById(1) as OkNegotiatedContentResult<ProjectEntity>;
             Assert.IsNotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        public void When_GetProjectById_Then_VerifyResults_Throughput()
-        {
-            var result = controller.GetProjectById(1) as OkNegotiatedContentResult<ProjectEntity>;
-            Assert.IsNotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_GetTaskById_Then_VerifyResults_Iterations()
-        {
-            var result = controller.GetTaskById(1) as OkNegotiatedContentResult<TaskEntity>;
-            Assert.IsNotNull(result);
-        }
-
-        [PerfBenchmark( RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_GetTaskById_Then_VerifyResults_Throughput()
+        public void When_GetTaskById_Then_VerifyResults()
         {
             var result = controller.GetTaskById(1) as OkNegotiatedContentResult<TaskEntity>;
             Assert.IsNotNull(result);
         }
 
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_GetParentTaskById_Then_VerifyResults_Iterations()
+        public void When_GetParentTaskById_Then_VerifyResults()
         {
             var result = controller.GetParentTaskById(1) as OkNegotiatedContentResult<TaskEntity>;
             Assert.IsNotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        public void When_GetParentTaskById_Then_VerifyResults_Throughput()
-        {
-            var result = controller.GetParentTaskById(1) as OkNegotiatedContentResult<TaskEntity>;
-            Assert.IsNotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_AddUser_Then_VerifyResults_Iterations()
+        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
+        public void When_AddUser_Then_VerifyResults()
         {
             var user = TestDataHelper.GetUser().Map();
             var result = controller.CreateUser(user);
             Assert.NotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_AddUser_Then_VerifyResults_Throughput()
-        {
-            var user = TestDataHelper.GetUser().Map();
-            var result = controller.CreateUser(user);
-            Assert.NotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_AddProject_Then_VerifyResults_Iterations()
+        public void When_AddProject_Then_VerifyResults()
         {
             var project = TestDataHelper.GetProject().Map();
             var result = controller.CreateProject(project);
             Assert.NotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        public void When_AddProject_Then_VerifyResults_Throughput()
-        {
-            var project = TestDataHelper.GetProject().Map();
-            var result = controller.CreateProject(project);
-            Assert.NotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_AddTask_Then_VerifyResults_Iterations()
+        public void When_AddTask_Then_VerifyResults()
         {
             var project = TestDataHelper.GetTask().Map();
             var result = controller.AddTask(project);
             Assert.NotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_AddTask_Then_VerifyResults_Throughput()
-        {
-            var project = TestDataHelper.GetTask().Map();
-            var result = controller.AddTask(project);
-            Assert.NotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_AddParentTask_Then_VerifyResults_Iterations()
+        public void When_AddParentTask_Then_VerifyResults()
         {
             var project = TestDataHelper.GetTask().Map();
             var result = controller.AddParentTask(project);
             Assert.NotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        public void When_AddParentTask_Then_VerifyResults_Throughput()
-        {
-            var project = TestDataHelper.GetTask().Map();
-            var result = controller.AddParentTask(project);
-            Assert.NotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_UpdateTask_Then_VerifyResults_Iterations()
+        public void When_UpdateTask_Then_VerifyResults()
         {
             var project = TestDataHelper.GetTask().Map();
             project.TaskId = 10;
@@ -249,67 +150,35 @@ namespace ProjectManager.Tests.PerformanceTests
             Assert.NotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_UpdateTask_Then_VerifyResults_Iterations_Throughput()
-        {
-            var project = TestDataHelper.GetTask().Map();
-            project.TaskId = 10;
-            var result = controller.UpdateTask(project);
-            Assert.NotNull(result);
-        }
 
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_EndTask_Then_VerifyResults_Iterations()
+        public void When_EndTask_Then_VerifyResults()
         {
             var result = controller.EndTask(10);
             Assert.NotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        public void When_EndTask_Then_VerifyResults_Throughput()
-        {
-            var result = controller.EndTask(10);
-            Assert.NotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_SuspendProject_Then_VerifyResults_Iterations()
+        public void When_SuspendProject_Then_VerifyResults()
         {
             var result = controller.SuspendProject(1);
             Assert.NotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_SuspendProject_Then_VerifyResults_Throughput()
-        {
-            var result = controller.SuspendProject(1);
-            Assert.NotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_DeleteProject_Then_VerifyResults_Iterations()
+        public void When_DeleteProject_Then_VerifyResults()
         {
             var result = controller.DeleteProject(1);
             Assert.NotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_DeleteProject_Then_VerifyResults_Throughput()
-        {
-            var result = controller.DeleteProject(1);
-            Assert.NotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         public void When_DeleteUser_Then_VerifyResults()
@@ -318,31 +187,14 @@ namespace ProjectManager.Tests.PerformanceTests
             Assert.NotNull(result);
         }
 
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_DeleteUser_Then_VerifyResults_Throughput()
-        {
-            var result = controller.DeleteUser(1);
-            Assert.NotNull(result);
-        }
-
-        [PerfBenchmark(NumberOfIterations = 5000, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
         [CounterMeasurement("ProjectManagerServiceCounter")]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
-        public void When_DeleteTask_Then_VerifyResults_Iterations()
+        public void When_DeleteTask_Then_VerifyResults()
         {
             var result = controller.DeleteTask(1);
             Assert.NotNull(result);
         }
-
-        [PerfBenchmark(RunMode = RunMode.Throughput, TestMode = TestMode.Test, SkipWarmups = true)]
-        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
-        public void When_DeleteTask_Then_VerifyResults_Throughput()
-        {
-            var result = controller.DeleteTask(1);
-            Assert.NotNull(result);
-        }
-
 
         private Mock<IProjectManagerService> Configure()
         {
