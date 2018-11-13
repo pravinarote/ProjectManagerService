@@ -10,6 +10,7 @@ using System.Web.Http.Results;
 
 namespace ProjectManager.Tests.PerformanceTests
 {
+    [Ignore("a")]
     public class ServicePerformanceTests : PerformanceTestSuite<ServicePerformanceTests>
     {
         private Counter _counter;

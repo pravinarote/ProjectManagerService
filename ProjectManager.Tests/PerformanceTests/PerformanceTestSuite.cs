@@ -9,6 +9,7 @@ using System.Linq.Expressions;
 
 namespace ProjectManager.Tests.PerformanceTests
 {
+    [Ignore("a")]
     public class PerformanceTestSuite<T>
     {
         [TestCaseSource(nameof(Benchmarks))]
