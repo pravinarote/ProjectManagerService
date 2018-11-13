@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/packages
+/ProjectManager.API/bin
+/ProjectManager.API/obj
+/ProjectManager.BusinessLayer/bin
+/ProjectManager.BusinessLayer/obj
+/ProjectManager.DAL/bin
+/ProjectManager.DAL/obj
+/ProjectManager.Entities/bin
+/ProjectManager.Entities/obj
+/ProjectManager.Tests/bin
+/ProjectManager.Tests/obj
+
+

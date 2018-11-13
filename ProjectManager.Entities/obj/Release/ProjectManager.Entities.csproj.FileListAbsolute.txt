@@ -1,5 +1,0 @@
-C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.Entities\bin\Release\ProjectManager.Entities.dll
-C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.Entities\bin\Release\ProjectManager.Entities.pdb
-C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.Entities\obj\Release\ProjectManager.Entities.csprojResolveAssemblyReference.cache
-C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.Entities\obj\Release\ProjectManager.Entities.dll
-C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.Entities\obj\Release\ProjectManager.Entities.pdb

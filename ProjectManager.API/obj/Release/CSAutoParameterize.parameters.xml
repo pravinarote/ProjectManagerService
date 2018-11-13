@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-ProjectManager.API-20181024022800.mdf;Initial Catalog=aspnet-ProjectManager.API-20181024022800;Integrated Security=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\FSD\\Final\ Assessment\\ProjectManagerService\\ProjectManager\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
-  </parameter>
-  <parameter name="ProjectManagerConn-Web.config Connection String" description="ProjectManagerConn Connection String used in web.config by the application to access the database." defaultValue="Data Source=DOTNET;Initial Catalog=ProjectManager;Integrated Security=True;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\FSD\\Final\ Assessment\\ProjectManagerService\\ProjectManager\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ProjectManagerConn']/@connectionString" />
-  </parameter>
-</parameters>
