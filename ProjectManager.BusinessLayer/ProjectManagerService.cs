@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ProjectManager.BusinessLayer.BusinessEntities;
 using ProjectManager.BusinessLayer.Mapper;
@@ -223,6 +224,14 @@ namespace ProjectManager.BusinessLayer
         {
             var userModel = userRepository.Get(user.UserId);
             userRepository.Update(user.Map(userModel));
+
+            return true;
+        }
+
+        public bool DeleteParentTask(int id)
+        {
+            var task = parentTaskRepository.Get(id);
+            parentTaskRepository.Remove(task);
 
             return true;
         }

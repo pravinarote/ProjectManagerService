@@ -178,6 +178,14 @@ namespace ProjectManager.Tests.BusinessLayer
         }
 
         [Test]
+        public void When_DeleteParentTask_Then_VerifyResult()
+        {
+            var tasks = _mockProjectManagerService.DeleteParentTask(1);
+
+            Assert.NotNull(tasks);
+        }
+
+        [Test]
         public void When_DeleteUser_Then_VerifyResult()
         {
             var tasks = _mockProjectManagerService.DeleteUser(1);

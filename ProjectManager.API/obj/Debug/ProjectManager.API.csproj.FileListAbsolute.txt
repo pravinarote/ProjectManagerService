@@ -1,4 +1,3 @@
-C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\obj\Debug\ProjectManager.API.csprojResolveAssemblyReference.cache
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\bin\ApplicationInsights.config
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\bin\roslyn\csc.exe
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -112,5 +111,6 @@ C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\bin\Microsoft.O
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\bin\Microsoft.Owin.Security.Twitter.xml
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\bin\System.Web.Http.Owin.xml
+C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\obj\Debug\ProjectManager.API.csprojResolveAssemblyReference.cache
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\obj\Debug\ProjectManager.API.dll
 C:\FSD\Final Assessment\ProjectManagerService\ProjectManager.API\obj\Debug\ProjectManager.API.pdb

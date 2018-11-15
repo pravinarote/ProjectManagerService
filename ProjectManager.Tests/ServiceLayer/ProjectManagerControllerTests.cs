@@ -212,6 +212,16 @@ namespace ProjectManager.Tests.ServiceLayer
             Assert.NotNull(result);
         }
 
+        [Test]
+        public void When_DeleteParentTask_Then_VerifyResults()
+        {
+            var result = controller.DeleteParentTask(1);
+            Assert.NotNull(result);
+
+            result = controller.DeleteParentTask(0);
+            Assert.NotNull(result);
+        }
+
         private Mock<IProjectManagerService> Configure()
         {
             Mock<IProjectManagerService> projectManagerService = new Mock<IProjectManagerService>();
@@ -239,6 +249,7 @@ namespace ProjectManager.Tests.ServiceLayer
             projectManagerService.Setup(mr => mr.SuspendProject(It.IsAny<int>())).Returns(true);
             projectManagerService.Setup(mr => mr.UpdateParentTask(It.IsAny<TaskEntity>())).Returns(true);
             projectManagerService.Setup(x => x.DeleteTask(It.IsAny<int>())).Returns(true);
+            projectManagerService.Setup(x => x.DeleteParentTask(It.IsAny<int>())).Returns(true);
 
             var projectList = TestDataHelper.GetProjectList().Map();
             projectManagerService.Setup(x => x.GetAllProject()).Returns(projectList);

@@ -16,6 +16,7 @@ namespace ProjectManager.BusinessLayer
         TaskEntity GetParentTaskById(int id);
         int AddParentTask(TaskEntity taskEntity);
         bool UpdateParentTask(TaskEntity taskEntity);
+        bool DeleteParentTask(int id);
 
         List<ProjectEntity> GetAllProject();
         ProjectEntity GetProjectById(int id);

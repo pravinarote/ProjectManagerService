@@ -173,6 +173,13 @@ namespace ProjectManager.API.Controllers
             return Ok(projectManagerService.DeleteTask(id));
         }
 
+        [Route("ParentTasks/Delete/{id}")]
+        [HttpDelete]
+        public IHttpActionResult DeleteParentTask(int id)
+        {
+            return Ok(projectManagerService.DeleteParentTask(id));
+        }
+
         [Route("Projects/Delete/{id}")]
         [HttpDelete]
         public IHttpActionResult DeleteProject(int id)
